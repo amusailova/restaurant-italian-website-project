@@ -1,33 +1,36 @@
 html body {
   background-color: #1c1c1c;
-}
-
-.home-image {
-  opacity: 0.7;
   width: 100%;
-  height: auto;
+  height: 100%;
   margin: 0 auto;
+  padding: 0 auto;
+  overflow-x: hidden;
 }
 
-.centered ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  font-size: 32px;
-}
-
-.centered ul .line1 {
-  font-family: "Lora", serif;
-}
-
-.centered ul .line2 {
-  font-family: "Homemade Apple", cursive;
-}
-
+/* Mixins */
 /* NavBar */
-.navbar {
-  font-weight: 200;
-  margin-right: 40px;
+.navbar-brand {
+  margin-left: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-brand img {
+  height: 70px;
+  width: auto;
+}
+
+@media (min-width: 360px) {
+  .navbar-brand img {
+    height: 50px;
+    width: auto;
+    margin-left: -25px;
+  }
+}
+
+.navbar-collapse {
+  font-size: larger;
+  text-align: center;
 }
 
 .navbar .fab {
@@ -41,15 +44,13 @@ html body {
 }
 
 /* Homepage */
-.container {
-  position: relative;
-  text-align: center;
-  max-width: 100%;
-  color: white;
-  margin-left: 0px;
-  margin-right: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
+/* Mixins */
+.home-image {
+  opacity: 0.7;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 auto;
 }
 
 .centered {
@@ -60,12 +61,46 @@ html body {
           transform: translate(-50%, -50%);
 }
 
-.limited {
-  border-top: 1px solid rgba(255, 255, 255, 0.6);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-  padding: 0.75rem;
-  display: inline-block;
-  margin: 2rem auto 0;
+.centered ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+@media (min-width: 992px) {
+  .centered ul {
+    font-size: 32px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .centered ul {
+    font-size: 30px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (min-width: 360px) {
+  .centered ul {
+    font-size: 14px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.centered ul .line1 {
+  font-family: "Lora", serif;
+}
+
+.centered ul .line2 {
+  font-family: "Homemade Apple", cursive;
 }
 
 .lato {
@@ -77,8 +112,44 @@ html body {
   text-align: center;
 }
 
+@media (min-width: 360px) {
+  .lato {
+    font-size: 10px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.limited {
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 0.75rem;
+  display: inline-block;
+  margin: 2rem auto 0;
+}
+
+@media (min-width: 360px) {
+  .limited {
+    margin-top: 15px;
+    padding-top: 0 auto;
+  }
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  max-width: 100%;
+  color: white;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .founder-quote {
   margin-top: 100px;
+  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -87,14 +158,47 @@ html body {
   color: #cacaca;
 }
 
+@media (min-width: 360px) {
+  .founder-quote {
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 12px;
+  }
+}
+
 /* Second container */
 .second-container {
   margin-top: 120px;
-  width: 1200px;
+  width: 100%;
+  font-size: 14px;
+}
+
+@media (min-width: 992px) {
+  .second-container {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .second-container {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 360px) {
+  .second-container {
+    margin-top: 50px;
+    font-size: 12px;
+  }
+  .second-container p {
+    margin-top: 30px;
+    padding: 20px;
+  }
 }
 
 .second-container h2 {
   font-family: "Homemade Apple", cursive;
+  padding-top: 20px;
 }
 
 .second-container p {
@@ -112,5 +216,9 @@ html body {
 /* Google location */
 .location {
   height: 500px;
+}
+
+.location h4 {
+  margin-top: 100px;
 }
 /*# sourceMappingURL=style.css.map */

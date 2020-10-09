@@ -1,32 +1,34 @@
 html body {
   background-color: #1c1c1c;
-}
-
-.home-image {
-  opacity: 0.7;
   width: 100%;
-  height: auto;
+  height: 100%;
   margin: 0 auto;
+  padding: 0 auto;
+  overflow-x: hidden;
 }
-.centered ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  font-size: 32px;
 
-  .line1 {
-    font-family: "Lora", serif;
-  }
-  .line2 {
-    font-family: "Homemade Apple", cursive;
-  }
-}
+/* Mixins */
 
 /* NavBar */
 
-.navbar {
-  font-weight: 200;
-  margin-right: 40px;
+.navbar-brand {
+  margin-left: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  img {
+    height: 70px;
+    width: auto;
+    @media (min-width: 360px) {
+      height: 50px;
+      width: auto;
+      margin-left: -25px;
+    }
+  }
+}
+.navbar-collapse {
+  font-size: larger;
+  text-align: center;
 }
 .navbar .fab {
   font-size: 20px;
@@ -39,6 +41,71 @@ html body {
 
 /* Homepage */
 
+/* Mixins */
+@mixin responsiveHeader {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.home-image {
+  opacity: 0.7;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.centered ul {
+  @include responsiveHeader();
+  font-size: 18px;
+  @media (min-width: 992px) {
+    font-size: 32px;
+    @include responsiveHeader();
+  }
+  @media (min-width: 768px) {
+    font-size: 30px;
+    @include responsiveHeader();
+  }
+  @media (min-width: 360px) {
+    font-size: 14px;
+
+    @include responsiveHeader();
+  }
+  .line1 {
+    font-family: "Lora", serif;
+  }
+  .line2 {
+    font-family: "Homemade Apple", cursive;
+  }
+}
+.lato {
+  margin: 0;
+  letter-spacing: 0.15rem;
+  color: white;
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: center;
+  @media (min-width: 360px) {
+    font-size: 10px;
+    @include responsiveHeader();
+  }
+}
+.limited {
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 0.75rem;
+  display: inline-block;
+  margin: 2rem auto 0;
+  @media (min-width: 360px) {
+    margin-top: 15px;
+    padding-top: 0 auto;
+  }
+}
 .container {
   position: relative;
   text-align: center;
@@ -49,44 +116,47 @@ html body {
   padding-left: 0px;
   padding-right: 0px;
 }
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.limited {
-  border-top: 1px solid rgba(255, 255, 255, 0.6);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-  padding: 0.75rem;
-  display: inline-block;
-  margin: 2rem auto 0;
-}
-.lato {
-  margin: 0;
-  letter-spacing: 0.15rem;
-  color: white;
-  font-weight: 400;
-  line-height: 1.3;
-  text-align: center;
-}
+
 .founder-quote {
   margin-top: 100px;
+  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   font-family: "Lora", serif;
   font-style: italic;
   color: #cacaca;
+  @media (min-width: 360px) {
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 12px;
+  }
 }
 
 /* Second container */
 
 .second-container {
   margin-top: 120px;
-  width: 1200px;
+  width: 100%;
+
+  font-size: 14px;
+  @media (min-width: 992px) {
+    font-size: 24px;
+  }
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+  @media (min-width: 360px) {
+    margin-top: 50px;
+    font-size: 12px;
+    p {
+      margin-top: 30px;
+      padding: 20px;
+    }
+  }
   h2 {
     font-family: "Homemade Apple", cursive;
+    padding-top: 20px;
   }
   p {
     text-align: center;
@@ -104,4 +174,7 @@ html body {
 
 .location {
   height: 500px;
+}
+.location h4 {
+  margin-top: 100px;
 }
