@@ -175,10 +175,20 @@ html body {
 /* Footer - bottom */
 
 .location {
-  height: 500px;
+  height: 250px;
+  h2 {
+    margin-top: 100px;
+    color: #b4b4b4;
+    text-align: center;
+  }
 }
-.location h4 {
-  margin-top: 100px;
+
+.address {
+  display: block;
+  text-align: center;
+  list-style: none;
+  margin-top: 35px;
+  color: #b4b4b4;
 }
 .footer-bottom {
   display: block;
