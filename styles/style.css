@@ -290,4 +290,10 @@ html body {
 .socials .fab .fab:hover {
   color: #f3f2f2;
 }
+
+small {
+  color: #b4b4b4;
+  text-align: center;
+  display: block;
+}
 /*# sourceMappingURL=style.css.map */
